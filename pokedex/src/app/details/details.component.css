@@ -1,0 +1,20 @@
+.div-img{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.img{
+  width: 40%;
+}
+.div-item-list{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.card-name{
+  min-width:70%;
+  max-width: 80%;
+}

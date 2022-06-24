@@ -14,13 +14,13 @@ export class LoginService {
   ) { }
 
   isLoggedIn() {
-    if(localStorage.getItem("token")){
+    if(localStorage.getItem("userId")){
       return true
     }
     return false;
   }
 
-  loginUser(login : any) : Observable<any>{
+    loginUser(login : any) : Observable<any>{
     console.log(login)
     let header = new HttpHeaders().set('Type-content', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
@@ -31,7 +31,7 @@ export class LoginService {
   }
 
   logOut() {
-    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     this.router.navigate(['/login']);
   }
   addToken(r: any) {

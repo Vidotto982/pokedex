@@ -1,0 +1,33 @@
+.pokemon-card{
+  display: flex;
+  border-color: #0fa2a2;
+}
+.div-item-list{
+  display: flex;
+  width: 100%;
+}
+.card-name{
+  width: 90%;
+}
+.card-lvl , .card-type{
+  width: 5%;
+}
+.container{
+  display: flex;
+  text-align: center;
+  max-width: 1000px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  width: 900px;
+}
+.container-card{
+  display: flex;
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  align-items: center;
+}

@@ -2,6 +2,7 @@
 .formLogin {
   min-height: calc(100vh - 16px);
   background: linear-gradient(90deg, rgba(130, 112, 255, 0.67) 0%, rgba(71, 165, 196, 0.87) 56%, rgba(0, 212, 255, 1) 100%);
+  background-attachment: fixed;
   display: flex;
   align-content: flex-start;
   justify-content: space-evenly;

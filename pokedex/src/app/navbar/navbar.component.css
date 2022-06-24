@@ -1,0 +1,21 @@
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 54%;
+  align-items: center;
+  margin: 0px 0px 15px 0px;
+}
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border-color: #0fa2a2;
+  text-decoration-color: #0fa2a2;
+}
+.mat-card{
+  border-style: none;
+  border: none;
+}

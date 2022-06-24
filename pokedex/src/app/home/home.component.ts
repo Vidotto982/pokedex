@@ -9,34 +9,27 @@ import { Pokemon } from "../models/pokemon";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  clear = '';
-  searchName = '';
-  pokemon: Pokemon[] = [];
-  loading: any;
+  pokemons: Pokemon[] = [];
+  _pokemon: Pokemon | undefined;
   constructor(private loginService: LoginService,
               private pokedexService: PokedexService,
   ) {
   }
 
   ngOnInit(): void {
-    this.pokedexService.getPokemon();
+    this.pokedexService.getPokemons(localStorage['userId']).subscribe(((res: any) => {
+      this.pokemons = res
+    console.log(this.pokemons)
+    }
+  ));
   }
-
-  // getPokemons(searchName: string) {
-  //   if(!searchName){
-  //     this.pokedexService.getPokemon(this.searchName)
-  //       .subscribe((res: any) => this.pokemon = res.pokemon);
-  //   }else {
-  //     this.pokedexService.getPokemon(searchName).subscribe((res: any) => this.pokemon = res.pokemon);
-  //   }
-  // }
 
 
   logOut() {
     this.loginService.logOut();
   }
 
-  private getPokemon(searchName: string) {
-
+  select(pokemon: Pokemon) {
+    this._pokemon = pokemon;
   }
 }

@@ -1,0 +1,26 @@
+<div class="container">
+  <div *ngIf="pokemon">
+    <mat-card class="pokemon-card">
+      <button mat-raised-button (click)="unSet()"><- </button>
+      <div class="div-item-list">
+        <mat-card class="card-type">
+          <h4> Type: {{pokemon.type}}</h4>
+        </mat-card>
+        <mat-card class="card-name">
+          <h4>{{pokemon.name}}</h4>
+        </mat-card>
+        <mat-card class="card-lvl">
+          <h4>Lv: {{pokemon.lvl}}</h4>
+        </mat-card>
+      </div>
+      <mat-card class="card-img">
+        <div class="div-img">
+          <img src="{{pokemon.image}}"  class="img">
+        </div>
+      </mat-card>
+    </mat-card>
+  </div>
+  <div class="div-item-list" *ngIf="!pokemon">
+    <app-home (select)="unSet()"> </app-home>
+  </div>
+</div>
