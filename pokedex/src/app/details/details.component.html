@@ -1,7 +1,5 @@
 <div class="container">
   <div *ngIf="pokemon">
-    <mat-card class="pokemon-card">
-      <button mat-raised-button (click)="unSet()"><- </button>
       <div class="div-item-list">
         <mat-card class="card-type">
           <h4> Type: {{pokemon.type}}</h4>
@@ -13,14 +11,21 @@
           <h4>Lv: {{pokemon.lvl}}</h4>
         </mat-card>
       </div>
+      <div class="div-list-abilities">
+        <div class="div-abilities" *ngFor="let abilitie of pokemon.abilities">
+          <mat-card class="card-abilites">
+            <h1> {{abilitie.name}}</h1>
+            <h3>  {{abilitie.description}}  </h3>
+            <span></span>
+          </mat-card>
+        </div>
+      </div>
       <mat-card class="card-img">
         <div class="div-img">
           <img src="{{pokemon.image}}"  class="img">
         </div>
       </mat-card>
-    </mat-card>
   </div>
   <div class="div-item-list" *ngIf="!pokemon">
-    <app-home (select)="unSet()"> </app-home>
   </div>
 </div>

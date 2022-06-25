@@ -21,12 +21,10 @@ export class LoginService {
   }
 
     loginUser(login : any) : Observable<any>{
-    console.log(login)
     let header = new HttpHeaders().set('Type-content', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
       .set('Access-Control-Allow-Methods', '*')
       .set('Access-Control-Allow-Headers', '*')
-    console.log(header)
     return this.http.post(this.url, login, {headers: header});
   }
 

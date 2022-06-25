@@ -8,16 +8,12 @@ import { Pokemon } from "../models/pokemon";
 })
 export class DetailsComponent implements OnInit {
    @Input() pokemon: Pokemon | undefined;
-   @Output() pokemonEmitter = new EventEmitter<Pokemon>();
+
 
 
   constructor() { }
 
   ngOnInit(): void {
 
-  }
-
-  unSet() {
-    this.pokemonEmitter.emit(this.pokemon = undefined);
   }
 }

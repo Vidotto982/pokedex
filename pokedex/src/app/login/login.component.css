@@ -1,6 +1,5 @@
-
 .formLogin {
-  min-height: calc(100vh - 16px);
+  min-height: calc(100vh - 44px);
   background: linear-gradient(90deg, rgba(130, 112, 255, 0.67) 0%, rgba(71, 165, 196, 0.87) 56%, rgba(0, 212, 255, 1) 100%);
   background-attachment: fixed;
   display: flex;
@@ -14,11 +13,15 @@
 .cardLogin {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-content: flex-end;
   flex-wrap: wrap;
-  margin-top: 16px;
   padding: 32px;
+  margin: 0;
+  border: none;
+  border-radius: 16px;
+}
+
+.mat-form-field-wrapper div.mat-form-field-flex {
+  padding-top: 0;
 }
 
 .img-item {
@@ -29,7 +32,12 @@
   text-align: center;
 }
 
-h3.title-login {
-  margin: 32px;
+.title-login {
+  display: flex;
+  width: 100%;
+  justify-content: center;
   text-align: center;
+  padding: 8px;
+  margin: 0;
+  background-color: rgba(100, 149, 237, 0.44);
 }

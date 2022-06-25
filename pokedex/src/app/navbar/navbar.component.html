@@ -1,6 +1,11 @@
 <div class="container">
   <div class="navbar">
-    <h1 class="title-navbar" > Pokedex - Lite </h1>
-    <button mat-raised-button (click)="logout()"> Logout </button>
+    <div *ngIf="showBackButton">
+      <button mat-raised-button (click)="unSet()" class="btn-back">
+        <svg width="17" height="18" viewBox="0 0 17 18"><g fill="none" fill-rule="evenodd" stroke="black" stroke-width="1.5"><path d="M9 1.458L1.458 9 9 16.542M1.667 9h14.666"></path></g></svg>
+      </button>
+    </div>
+      <h1 [ngClass]="{'margin-button': !showBackButton}" class="title-navbar"> Pokedex - Lite </h1>
+    <button mat-raised-button (click)="logout()" class="btn-logout"> Logout </button>
   </div>
 </div>

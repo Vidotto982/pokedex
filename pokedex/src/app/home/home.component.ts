@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { LoginService } from "../service/login.service";
 import { PokedexService } from "../service/pokedex.service";
 import { Pokemon } from "../models/pokemon";
@@ -11,6 +11,7 @@ import { Pokemon } from "../models/pokemon";
 export class HomeComponent implements OnInit {
   pokemons: Pokemon[] = [];
   _pokemon: Pokemon | undefined;
+
   constructor(private loginService: LoginService,
               private pokedexService: PokedexService,
   ) {
@@ -19,7 +20,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.pokedexService.getPokemons(localStorage['userId']).subscribe(((res: any) => {
       this.pokemons = res
-    console.log(this.pokemons)
     }
   ));
   }
@@ -31,5 +31,9 @@ export class HomeComponent implements OnInit {
 
   select(pokemon: Pokemon) {
     this._pokemon = pokemon;
+  }
+
+  unSet() {
+    this._pokemon = undefined;
   }
 }

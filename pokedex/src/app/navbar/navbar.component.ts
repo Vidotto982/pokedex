@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LoginService } from "../service/login.service";
+import { Pokemon } from "../models/pokemon";
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,8 @@ import { LoginService } from "../service/login.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  @Input() showBackButton: boolean = false;
+  @Output() pokemonEmitter = new EventEmitter<Pokemon>();
 
   constructor(private loginService: LoginService,
               ) { }
@@ -14,7 +17,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  unSet(){
+    this.pokemonEmitter.emit();
+
+  }
     logout() {
         this.loginService.logOut()
     }
+
+
 }

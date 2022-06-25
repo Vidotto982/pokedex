@@ -1,18 +1,19 @@
 <div class="container">
+  <h3 class="title-login">
+    Para ver la Pokedex, usted debe ingresar
+  </h3>
   <div class="formGroup formLogin">
     <mat-card class="cardLogin">
-      <mat-card-title class="title-login">
-        Para ver la Pokedex, usted debe ingresarse
-      </mat-card-title>
+
       <form [formGroup]="createdForm">
         <div>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" class="field-login">
             <mat-card-subtitle>Username</mat-card-subtitle>
             <input matInput type="text" formControlName="username"/>
           </mat-form-field>
         </div>
         <div>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" class="field-login">
             <mat-card-subtitle>Password</mat-card-subtitle>
             <input matInput type="password" formControlName="password"/>
           </mat-form-field>

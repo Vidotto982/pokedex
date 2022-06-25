@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
   submit() {
     this.service.loginUser(this.createdForm.getRawValue())
       .subscribe(r => {
-          console.log(r)
           this.router.navigate(['/home']);
           this.service.addToken(r);
         },

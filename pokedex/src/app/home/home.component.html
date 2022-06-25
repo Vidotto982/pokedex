@@ -1,8 +1,14 @@
 <div class="container-card">
+    <app-navbar class="w-100" [showBackButton]="!!_pokemon" (pokemonEmitter)="unSet()"> </app-navbar>
   <div class="container" *ngIf="!_pokemon">
-  <app-navbar></app-navbar>
+    <div class="div-btn">
+      <button class="btn-create" mat-raised-button routerLink="/add"> Agregar
+        <mat-icon>
+          add
+        </mat-icon>
+      </button>
+    </div>
     <div  *ngFor="let pokemon of pokemons">
-      <mat-card class="pokemon-card">
         <div class="div-item-list" (click)="select(pokemon)">
           <mat-card class="card-type">
             <h4>{{pokemon.type}}</h4>
@@ -14,11 +20,9 @@
             <h4>{{pokemon.lvl}}</h4>
           </mat-card>
         </div>
-      </mat-card>
     </div>
   </div>
   <div class="container" *ngIf="_pokemon">
-
     <app-details [pokemon]="_pokemon"></app-details>
   </div>
 </div>
