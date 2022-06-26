@@ -24,10 +24,10 @@ export class CreatePokemonComponent implements OnInit {
   ngOnInit(): void {
     this.createdForm = this.formBuilder.group({
       name: [this.pokemon?.name ? this.pokemon.name : '', [Validators.required]],
-      types: new FormArray([]),
+      type: new FormArray([]),
       abilities : new FormArray([]),
       lvl: [this.pokemon?.lvl ? this.pokemon.lvl :  '', [Validators.required]],
-      evolutionId:[this.pokemon ?.evolutionId ? this.pokemon.evolutionId :  '', [Validators.required]],
+      evolutionId: [this.pokemon ?.evolutionId ? this.pokemon.evolutionId :  null, [Validators.required]],
     });
 
     this.abilitie = new FormGroup({
@@ -50,10 +50,12 @@ export class CreatePokemonComponent implements OnInit {
 
 
   addType(){
-    console.log(this.typeForm)
-    this.createdForm.controls.types.push(this.typeForm);
+    // console.log(this.typeForm.controls.type)
+    this.createdForm.controls.type.push(this.typeForm.controls.type);
+    console.log(this.createdForm)
+
     this.typeForm = new FormGroup({
-      type : new FormControl(''),
+      types : new FormControl(''),
     })
     this.addTypes = false;
 

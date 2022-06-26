@@ -39,11 +39,11 @@
               <button mat-raised-button (click)="addType()"> Add Types</button>
             </ng-container>
           </div>
-          <div *ngFor="let types of this.typeForm?.controls['types']" class="list-abilities">
-            <mat-card class="card-abilitie">
-              <h2> {{types}}</h2>
-            </mat-card>
-          </div>
+<!--          <div *ngFor="let types of this.typeForm?.controls['type']" class="list-abilities">-->
+<!--            <mat-card class="card-abilitie">-->
+<!--              <h2> {{types.type}}</h2>-->
+<!--            </mat-card>-->
+<!--          </div>-->
           <button mat-raised-button (click)="addAbilities = true">
             <mat-icon>
               add
