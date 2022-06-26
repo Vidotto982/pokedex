@@ -1,14 +1,16 @@
 export interface Pokemon {
   name : string,
-  type : string,
+  type : Types[],
   abilities: Ability[];
   image : string,
   lvl : number,
-  id: number,
+  evolutionId: number | undefined,
+}
+export interface Types {
+type: string,
 }
 
 export interface Ability {
   name: string,
   description: string,
-
 }
