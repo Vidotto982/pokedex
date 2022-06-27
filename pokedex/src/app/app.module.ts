@@ -16,6 +16,7 @@ import { DetailsComponent } from './details/details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CreatePokemonComponent } from './create-pokemon/create-pokemon.component';
+import { AuthGuardService } from "./interceptors/interceptor.service";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { CreatePokemonComponent } from './create-pokemon/create-pokemon.componen
     HttpClientModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { Login } from "../models/login";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class LoginService {
     return false;
   }
 
-    loginUser(login : any) : Observable<any>{
+  loginUser(login : Login) : Observable<any>{
     let header = new HttpHeaders().set('Type-content', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
       .set('Access-Control-Allow-Methods', '*')

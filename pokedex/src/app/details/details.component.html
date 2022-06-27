@@ -1,8 +1,13 @@
 <div class="container">
+  <div class="btn-edit">
+    <div class="div-btn">
+    <button mat-raised-button color="primary" routerLink="/edit" (click)="editPokemon()">Edit Pokemon </button>
+    </div>
+  </div>
   <div *ngIf="pokemon">
-      <div class="div-item-list">
+    <div class="div-item-list">
         <mat-card class="card-type">
-          <h4> Type: {{pokemon.type}}</h4>
+          <h4>{{pokemon.type}}</h4>
         </mat-card>
         <mat-card class="card-name">
           <h4>{{pokemon.name}}</h4>
@@ -25,7 +30,5 @@
           <img src="{{pokemon.image}}"  class="img">
         </div>
       </mat-card>
-  </div>
-  <div class="div-item-list" *ngIf="!pokemon">
   </div>
 </div>

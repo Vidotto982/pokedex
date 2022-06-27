@@ -15,15 +15,18 @@
   justify-content: center;
 }
 .form-group-card{
+  display: flex;
   margin: 15px;
   width: auto;
-  display: flex;
   text-align: center;
+  min-width: 150px;
+  max-width: 500px;
 }
 
 .mat-form-field{
   display: flex;
   text-align: center;
+  justify-content: center;
 }
 .form-abilities{
   width: auto;

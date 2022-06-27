@@ -5,6 +5,7 @@ export interface Pokemon {
   image : string,
   lvl : number,
   evolutionId: number | undefined,
+  id: number,
 }
 export interface Types {
 type: string,

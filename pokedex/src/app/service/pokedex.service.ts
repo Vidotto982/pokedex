@@ -9,6 +9,8 @@ import { CreatedPokemon } from "../models/created-pokemon";
 })
 export class PokedexService {
 
+  selectedPokemon! : Pokemon
+
   constructor(private http: HttpClient,) { }
 
   readonly url: string = 'https://testing.certant.com/pokedex-api/'
@@ -22,5 +24,17 @@ export class PokedexService {
   }
   addPokemon(pokemon : CreatedPokemon): Observable<any> {
     return this.http.post(`${this.url}pokemon`, pokemon);
+  }
+
+  editPokemon(pokemon: CreatedPokemon): Observable<any> {
+    const urlPokemon= `${this.url}pokemon`;
+    return this.http.put(urlPokemon, pokemon);
+  }
+
+  setCurrentPokemon(pokemon : Pokemon){
+    this.selectedPokemon = pokemon
+  }
+  getCurrentPokemon(){
+    return this.selectedPokemon
   }
 }

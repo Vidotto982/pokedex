@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pokemon } from "../models/pokemon";
+import { PokedexService } from "../service/pokedex.service";
 
 @Component({
   selector: 'app-details',
@@ -7,13 +8,14 @@ import { Pokemon } from "../models/pokemon";
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-   @Input() pokemon: Pokemon | undefined;
+  @Input() pokemon!: Pokemon;
+  constructor(private pokedexService: PokedexService
+  ) { }
 
+  ngOnInit(): void {}
 
-
-  constructor() { }
-
-  ngOnInit(): void {
-
+  editPokemon(){
+    this.pokedexService.setCurrentPokemon(this.pokemon)
   }
+
 }
