@@ -13,29 +13,12 @@
   padding: 12px;
 }
 
-.mat-card{
-  border: none;
-}
-
 .title-navbar {
   margin: 0;
   text-align: center;
   width: 100%;
 }
 
-.title-navbar.margin-button {
-  margin-left: 64px;
-}
-
-app-navbar {
-  width: 100%;
-}
-
 .btn-logout {
   padding: 0;
-}
-
-.btn-back {
-  background: none;
-  box-shadow: none;
 }

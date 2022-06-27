@@ -1,5 +1,12 @@
 <div class="container">
   <div class="btn-edit">
+    <div>
+      <button (click)="goBack()" class="back-button">
+        <mat-icon>
+          arrow_back
+        </mat-icon>
+      </button>
+    </div>
     <div class="div-btn">
     <button mat-raised-button color="primary" routerLink="/edit" (click)="editPokemon()">Edit Pokemon </button>
     </div>

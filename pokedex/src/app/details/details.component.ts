@@ -9,6 +9,7 @@ import { PokedexService } from "../service/pokedex.service";
 })
 export class DetailsComponent implements OnInit {
   @Input() pokemon!: Pokemon;
+  @Output() onGoBack: EventEmitter<any> = new EventEmitter();
   constructor(private pokedexService: PokedexService
   ) { }
 
@@ -18,4 +19,7 @@ export class DetailsComponent implements OnInit {
     this.pokedexService.setCurrentPokemon(this.pokemon)
   }
 
+  goBack() {
+    this.onGoBack.emit();
+  }
 }

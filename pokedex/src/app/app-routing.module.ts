@@ -4,10 +4,11 @@ import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { CreatePokemonComponent } from "./create-pokemon/create-pokemon.component";
 import { AuthGuardService } from "./interceptors/interceptor.service";
+import { LayoutComponent } from "./layout/layout.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent,  canActivate: [AuthGuardService],
+  { path: '', component: LayoutComponent,  canActivate: [AuthGuardService],
     children:[
         { path: 'home', component: HomeComponent },
         { path: 'add', component: CreatePokemonComponent },

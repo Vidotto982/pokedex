@@ -1,5 +1,4 @@
 <div class="container-card">
-    <app-navbar class="w-100" [showBackButton]="!!_pokemon" (pokemonEmitter)="unSet()"> </app-navbar>
   <div class="container" *ngIf="!_pokemon">
     <div class="div-btn">
       <button class="btn-create" mat-raised-button routerLink="/add"> Agregar
@@ -23,6 +22,6 @@
     </div>
   </div>
   <div class="container" *ngIf="_pokemon">
-    <app-details [pokemon]="_pokemon"></app-details>
+    <app-details [pokemon]="_pokemon" (onGoBack)="this._pokemon = undefined"></app-details>
   </div>
 </div>
