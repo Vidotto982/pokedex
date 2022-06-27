@@ -28,7 +28,6 @@ export class CreatePokemonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.router.url)
     if(this.router.url == '/edit'){
       this.isEdit = true;
       if(this.isEdit){
@@ -74,19 +73,15 @@ export class CreatePokemonComponent implements OnInit {
   }
 
   addAbility() {
-    console.log(this.abilitie)
     this.createdForm.controls.abilities.push(this.abilitie);
     this.abilitie = new FormGroup({
       name: new FormControl(''),
       description: new FormControl(''),
     })
-    console.log(this.abilitie)
-
     this.addAbilities = false;
   }
 
   editPokemon() {
-
     if (this.pokemon) {
       this.pokemonService.editPokemon(this.createdForm.getRawValue()).subscribe();
     }

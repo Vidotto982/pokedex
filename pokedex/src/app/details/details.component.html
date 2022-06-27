@@ -23,19 +23,22 @@
           <h4>Lv: {{pokemon.lvl}}</h4>
         </mat-card>
       </div>
+    <mat-card class="card-img">
+      <div class="div-img">
+        <img src="{{pokemon.image}}"  class="img">
+      </div>
+    </mat-card>
       <div class="div-list-abilities">
+        <h1 class="h1-abilitie"> Abilities</h1>
         <div class="div-abilities" *ngFor="let abilitie of pokemon.abilities">
-          <mat-card class="card-abilites">
-            <h1> {{abilitie.name}}</h1>
-            <h3>  {{abilitie.description}}  </h3>
+          <div class="card-abilites">
+          <mat-card>
+            <h3> {{abilitie.name}}</h3>
+            <p>  {{abilitie.description}}  </p>
             <span></span>
           </mat-card>
+          </div>
         </div>
       </div>
-      <mat-card class="card-img">
-        <div class="div-img">
-          <img src="{{pokemon.image}}"  class="img">
-        </div>
-      </mat-card>
   </div>
 </div>

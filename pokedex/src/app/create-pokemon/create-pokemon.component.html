@@ -2,25 +2,25 @@
   <div class="row">
     <button mat-raised-button class="btn btn-primary" color="warn" type="button" routerLink="/home">
       <mat-icon>
-        cancel
+        cancel_outline
       </mat-icon>
     </button>
     <div class="container">
       <div class="formGroup">
-        <mat-card class="mat-form-field">
-          <form [formGroup]="createdForm">
+        <mat-card class="mat-form-field card-container">
+          <form [formGroup]="createdForm" >
             <mat-form-field appearance="fill" class="form-group-card">
               <mat-label>Name</mat-label>
               <input matInput type="text" formControlName="name"/>
             </mat-form-field>
-              <button mat-raised-button (click)="addTypes = true">
-                <mat-icon>
-                  add
-                </mat-icon>
-                Type
-              </button>
+            <button mat-raised-button (click)="addTypes = true">
+              <mat-icon>
+                add
+              </mat-icon>
+              Type
+            </button>
             <div *ngIf="addTypes">
-              <ng-container [formGroup]="typeForm" class="form-types">
+              <ng-container [formGroup]="typeForm">
                 <mat-form-field appearance="fill" class="form-group-card">
                   <mat-label>Type/s</mat-label>
                   <input matInput type="text" formControlName="type" />
@@ -28,17 +28,19 @@
                 <button mat-raised-button (click)="addType()"> Add Types</button>
               </ng-container>
             </div>
-              <div *ngFor="let type of this.createdForm?.controls['type']?.value" class="list-abilities">
-                <mat-card class="card-abilitie">
-                  <h2> {{type}}</h2>
-                </mat-card>
-              </div>
-            <button mat-raised-button (click)="addAbilities = true">
-              <mat-icon>
-                add
-              </mat-icon>
-              Ability
-            </button>
+            <div *ngFor="let type of this.createdForm?.controls['type']?.value" class="list-abilities">
+              <mat-card class="card-abilitie">
+                <mat-label> {{type}}</mat-label>
+              </mat-card>
+            </div>
+            <div class="btn-adds">
+              <button mat-raised-button class="btn-adds" (click)="addAbilities = true">
+                <mat-icon>
+                  add
+                </mat-icon>
+                Ability
+              </button>
+            </div>
             <div *ngIf="addAbilities">
               <ng-container [formGroup]="abilitie" class="form-abilities">
                 <mat-form-field appearance="fill" class="form-group-card">
@@ -49,27 +51,33 @@
                   <mat-label>description</mat-label>
                   <input matInput type="text" formControlName="description" />
                 </mat-form-field>
-                  <button mat-raised-button (click)="addAbility()"> Add Ability</button>
+                <div class="btn-adds">
+                  <button mat-raised-button  class="btn-adds" (click)="addAbility()"> Add Ability</button>
+                </div>
               </ng-container>
             </div>
-              <div *ngFor="let abilitie of this.createdForm?.controls['abilities']?.value" class="list-abilities">
-                <mat-card class="card-abilitie">
-                  <mat-label> {{abilitie.name}}</mat-label>
+            <div *ngFor="let abilitie of this.createdForm?.controls['abilities']?.value" class="list-abilities">
+              <mat-card class="card-abilitie">
+                <div>
+                  <h2> {{abilitie.name}}</h2>
+                </div>
+                <div>
                   <mat-label> {{abilitie.description}}</mat-label>
-                </mat-card>
-              </div>
+                </div>
+              </mat-card>
+            </div>
             <mat-form-field appearance="fill">
-              <h3>Lvl</h3>
+              <mat-label>Lvl</mat-label>
               <input matInput type="number" formControlName="lvl"/>
             </mat-form-field>
             <mat-form-field appearance="fill">
-              <h3>Evolution Id</h3>
+              <mat-label>Evolution Id</mat-label>
               <input matInput type="number" formControlName="evolutionId"/>
             </mat-form-field>
-              <mat-form-field appearance="fill">
-                <h3>Image path</h3>
-                <input matInput type="text" formControlName="image"/>
-              </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Image path</mat-label>
+              <input matInput type="text" formControlName="image"/>
+            </mat-form-field>
             <div class="form-group btn-sub" *ngIf="isEdit">
               <button mat-raised-button (click)="editPokemon();">
                 Edit Pokemon

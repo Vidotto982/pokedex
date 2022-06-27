@@ -18,27 +18,30 @@
   margin: 5px;
 }
 .card-name{
-  min-width:70%;
-  max-width: 80%;
+  width: 60%;
 }
 
 .div-item-list {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   margin: 12px 0;
 }
 
 .div-list-abilities {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
+.h1-abilitie{
+  margin: 15px 0px ;
+}
 .div-abilities{
   display: flex;
   width: 100%;
-  height: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
@@ -47,12 +50,12 @@
 
 .card-abilites{
   display: flex;
-  width: 100%;
-  height: 120px;
+  width: 50%;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: stretch;
+  margin: 10px;
 }
 
 @media (min-width: 728px) {
